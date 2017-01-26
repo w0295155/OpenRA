@@ -35,8 +35,8 @@ namespace OpenRA
 				var psi = new ProcessStartInfo("uname", "-s");
 				psi.UseShellExecute = false;
 				psi.RedirectStandardOutput = true;
-				var p = Process.Start(psi);
-				var kernelName = p.StandardOutput.ReadToEnd();
+				var process = Process.Start(psi);
+				var kernelName = process.StandardOutput.ReadToEnd();
 				if (kernelName.Contains("Darwin"))
 					return PlatformType.OSX;
 
